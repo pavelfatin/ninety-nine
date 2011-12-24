@@ -13,10 +13,10 @@ f1 (x:xs) = f1 xs ++ [x]
 
 -- Tail recursion
 f2 :: [a] -> [a]
-f2 xs = f2' xs []
+f2 = f2' []
  where f2' :: [a] -> [a] -> [a]
-       f2' [] acc = acc
-       f2' (x:xs) acc = f2' xs (x:acc)
+       f2' acc [] = acc
+       f2' acc (x:xs) = f2' (x:acc) xs
 
 -- Folding
 f3 :: [a] -> [a]

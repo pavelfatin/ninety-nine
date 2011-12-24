@@ -7,7 +7,7 @@
       (empty? (rest l))
       (and
         (= (first l) (last l))
-        (f1 (butlast (rest l))))))
+        (recur (butlast (rest l))))))
 
 ; Builtin "reverse"
 (defn f2 [l]

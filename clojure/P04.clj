@@ -16,3 +16,7 @@
     (if (seq it)
       (recur (rest it) (inc n))
       n)))
+
+; Folding
+(defn f3 [l]
+  (reduce (fn [a _] (inc a)) 0 l))

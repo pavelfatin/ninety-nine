@@ -20,7 +20,7 @@ f2 = f2' 0
 
 -- Folding
 f3 :: [a] -> Int
-f3 xs = foldl (\a _ -> a + 1) 0 xs
+f3 = foldl (\a _ -> a + 1) 0
 
 -- Folding with function composition
 f4 :: [a] -> Int

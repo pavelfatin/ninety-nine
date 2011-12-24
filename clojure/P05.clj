@@ -6,7 +6,7 @@
 
 ; Tail recursion
 (defn f1 [l]
-  (loop [it l, acc (empty l)]
+  (loop [it l, acc '()]
     (if (seq it)
-      (recur (rest it) (conj acc (first it)))
+      (recur (rest it) (cons (first it) acc))
       acc)))

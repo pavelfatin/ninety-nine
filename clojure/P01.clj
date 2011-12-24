@@ -9,3 +9,7 @@
   (if (next l)
     (recur (rest l))
     (first l)))
+
+; Folding
+(defn f2 [l]
+  (reduce (fn [_ b] b) l0))
