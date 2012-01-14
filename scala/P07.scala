@@ -11,7 +11,7 @@ abstract sealed class NestedList[T]
 case class Value[T](v: T) extends NestedList[T]
 case class Sequence[T](list: List[NestedList[T]]) extends NestedList[T]
 
-def f2[T](list: NestedList[T]): List[T] = list match {
+def f2[T]: NestedList[T] => List[T] = {
   case Value(v) => List(v)
   case Sequence(list) => list.flatMap(f2)
 }

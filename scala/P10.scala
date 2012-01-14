@@ -17,7 +17,7 @@ def f4[T](list: List[List[T]]): List[(Int, T)] =
   list.reverse.foldLeft(Nil: List[(Int, T)])((acc, x) => (x.length, x.head) :: acc)
 
 // Recursion
-def f5[T](list: List[List[T]]): List[(Int, T)] = list match {
+def f5[T]: List[List[T]] => List[(Int, T)] = {
   case Nil => Nil
   case h :: t => (h.length, h.head) :: f5(t)
 }
@@ -26,5 +26,5 @@ def f5[T](list: List[List[T]]): List[(Int, T)] = list match {
 @annotation.tailrec
 def f6[T](list: List[List[T]], acc: List[(Int, T)] = Nil): List[(Int, T)] = list match {
   case Nil => acc.reverse
-  case h :: t => f6(t,  (h.length, h.head) :: acc)
+  case h :: t => f6(t, (h.length, h.head) :: acc)
 }

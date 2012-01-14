@@ -12,4 +12,4 @@
 
 ; Folding
 (defn f2 [l]
-  (reduce (fn [_ b] b) l0))
+  (reduce (fn [_ b] b) l))

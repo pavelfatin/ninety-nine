@@ -7,5 +7,6 @@
 ; Recursion with "split-with"
 (defn f1 [l]
   (if (seq l)
-    (let [h (first l) t (rest l) [a b] (split-with #(= % h))]
-      (cons (cons h a) (f1 b)))))
+    (let [h (first l) t (rest l) [a b] (split-with #(= % h) t)]
+      (cons (cons h a) (f1 b)))
+    '()))

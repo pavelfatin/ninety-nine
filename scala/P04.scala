@@ -4,7 +4,7 @@
 def f0[T](list: List[T]): Int = list.length
 
 // Recursion
-def f1[T](list: List[T]): Int = list match {
+def f1[T]: List[T] => Int = {
   case Nil => 0
   case _ :: t => 1 + f1(t)
 }

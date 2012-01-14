@@ -4,7 +4,7 @@ import core.List;
 import core.Pair;
 
 import static core.List.*;
-import static core.Pair.pair;
+import static core.Pair.*;
 
 class P10 {
     // Recursion

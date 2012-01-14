@@ -1,7 +1,7 @@
 // P08 Eliminate consecutive duplicates of list elements.
 
 // Recursion with "dropWhile"
-def f1[T](list: List[T]): List[T] = list match {
+def f1[T]: List[T] => List[T] = {
   case Nil => Nil
   case h :: t => h :: f1(t.dropWhile(h ==))
 }
@@ -13,19 +13,19 @@ def f2[T](list: List[T], acc: List[T] = Nil): List[T] = list match {
 }
 
 // Recursion with pattern matching
-def f3[T](list: List[T]): List[T] = list match {
+def f3[T]: List[T] => List[T] = {
   case a :: (bs@(b :: _)) => if (a == b) f3(bs) else a :: f3(bs)
   case xs => xs
 }
 
 // Folding
-def f4[T](list: List[T]): List[T] = list match {
+def f4[T]: List[T] => List[T] = {
   case Nil => Nil
   case l => l.foldRight(List(l.last))((b, a) => if (a.head == b) a else b :: a)
 }
 
 // Using "zip"
-def f5[T](list: List[T]): List[T] = list match {
+def f5[T]: List[T] => List[T] = {
   case Nil => Nil
   case xs@(x :: _) => x :: xs.zip(xs.tail).filter(p => p._1 != p._2).map(_._2)
 }

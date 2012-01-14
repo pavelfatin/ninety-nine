@@ -55,6 +55,13 @@ public class List<T> implements Iterable<T> {
         return new List<T>(element, List.<T>nil());
     }
 
+    public static <T> List<T> replicate(int n, T element) {
+        List<T> list = nil();
+        for (int i = 0; i < n; i++)
+            list = cons(element, list);
+        return list;
+    }
+    
     public static <T> List<T> cons(T head, List<T> tail) {
         return new List<T>(head, tail);
     }

@@ -4,7 +4,7 @@
 @annotation.tailrec
 def f1[T](list: List[T], n: Int): T = list match {
   case Nil => throw new IndexOutOfBoundsException()
-  case h :: t => 
+  case h :: t =>
     if (n < 1) throw new IndexOutOfBoundsException()
     if (n == 1) h else f1(t, n - 1)
 }
