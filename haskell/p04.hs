@@ -1,7 +1,5 @@
 -- P04 Find the number of elements of a list.
 
-module P04 where
-
 -- Predefined function
 f0 :: [a] -> Int
 f0 = length

@@ -1,7 +1,5 @@
 -- P12 Decode a run-length encoded list.
 
-module P12 where
-
 data Entry a = Value a | Sequence Int a deriving Show
 
 -- Using concatMap

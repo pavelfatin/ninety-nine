@@ -1,7 +1,5 @@
 -- P05 Reverse a list.
 
-module P05 where
-
 -- Predefined function
 f0 :: [a] -> [a]
 f0 = reverse

@@ -1,7 +1,5 @@
 -- P03 Find the Kth element of a list.
 
-module P03 where
-
 -- Tail recursion
 f1 :: [a] -> Int -> a
 f1 [] _ = error "Index out of bound"

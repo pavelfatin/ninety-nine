@@ -1,7 +1,5 @@
 -- P08 Eliminate consecutive duplicates of list elements.
 
-module P08 where
-
 import Data.List
 
 -- Built-in functions composition

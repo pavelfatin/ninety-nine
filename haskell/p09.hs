@@ -1,7 +1,5 @@
 -- P09 Pack consecutive duplicates of list elements into sublists.
 
-module P09 where
-
 import Data.List
 
 -- Built-in function

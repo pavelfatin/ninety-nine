@@ -1,7 +1,5 @@
 -- P10 Run-length encoding of a list.
 
-module P10 where
-
 -- Mapping
 f1 :: [[a]] -> [(Int, a)]
 f1 = map (\x -> (length x, head x))

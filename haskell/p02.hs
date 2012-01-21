@@ -1,7 +1,5 @@
 -- P02 Find the last but one element of a list.
 
-module P02  where
-
 -- Recursion
 f1 :: [a] -> a
 f1 [] = error "empty list"

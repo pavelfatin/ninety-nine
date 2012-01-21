@@ -1,7 +1,5 @@
 -- P07 Flatten a nested list structure.
 
-module P07 where
-
 data NestedList a = Value a | List [NestedList a]
 
 -- Recursion

@@ -1,7 +1,5 @@
 -- P13 Run-length encoding of a list (direct solution).
 
-module P13 where
-
 data Entry a = Value a | Sequence Int a deriving Show
 
 -- Factory function

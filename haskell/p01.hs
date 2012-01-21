@@ -1,7 +1,5 @@
 -- P01 Find the last element of a list.
 
-module P01  where
-
 -- Predefined function
 f0 :: [a] -> a
 f0 = last

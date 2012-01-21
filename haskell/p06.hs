@@ -1,8 +1,6 @@
 -- P06 Find out whether a list is a palindrome.
 --     A palindrome can be read forward or backward; e.g. (x a m a x).
 
-module P06 where
-
 -- Recursion (inefficient)
 f1 :: (Eq a) => [a] -> Bool
 f1 []  = True
