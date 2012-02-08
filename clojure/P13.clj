@@ -2,7 +2,7 @@
 
 ; Factory function
 (defn encode [n x]
-  (if (= 1 n) x (list n x)))
+  (if (= 1 n) x [n x]))
 
 ; Using "split-with", so there's still some kind of sublists
 (defn f1 [l]
