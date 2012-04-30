@@ -23,4 +23,4 @@ def f4[T](list: List[T]): Boolean =
 def f5[T](list: List[T]): Boolean =
   list.zip(list.reverse)
     .map{case (a, b) => a == b}
-    .foldLeft(true){case (a, b) => a && b}
+    .foldLeft(true)(_ && _)

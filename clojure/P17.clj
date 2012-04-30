@@ -10,7 +10,7 @@
 ; Recursion with a counter
 (defn f3 [n l]
   (if (seq l)
-    (if (= n 0)
+    (if (zero? n)
       ['(), l]
       (let [[a b] (f3 (dec n) (rest l))]
         [(cons (first l) a), b]))
@@ -20,7 +20,7 @@
 (defn f4 [n l]
   (loop [k n xs l acc '()]
     (if (seq l)
-      (if (= k 0)
+      (if (zero? k)
         [(reverse acc) xs]
         (recur (dec k) (rest xs) (cons (first xs) acc)))
       [(reverse acc) '()])))

@@ -7,6 +7,7 @@ def f1[T]: List[T] => List[T] = {
 }
 
 // Tail recursion with "dropWhile"
+@annotation.tailrec
 def f2[T](list: List[T], acc: List[T] = Nil): List[T] = list match {
   case Nil => acc.reverse
   case h :: t => f2(t.dropWhile(h ==), h :: acc)

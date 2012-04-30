@@ -44,6 +44,13 @@ public class List<T> implements Iterable<T> {
         return NIL;
     }
 
+    public static List<Character> listOfChars(String chars) {
+        List<Character> list = nil();
+        for (Character each : chars.toCharArray())
+            list = cons(each, list);
+        return list.reverse();
+    }
+
     public static <T> List<T> list(T... elements) {
         List<T> list = nil();
         for (T each : elements) 
@@ -71,6 +78,18 @@ public class List<T> implements Iterable<T> {
         for (T each : prefix.reverse())
             result = cons(each, result);
         return result;
+    }
+
+    public List<T> prepend(T head) {
+        return cons(head, this);
+    }
+
+    public List<T> prepend(List<T> prefix) {
+        return concat(prefix, this);
+    }
+
+    public List<T> append(List<T> suffix) {
+        return concat(this, suffix);
     }
 
     public List<T> reverse() {
@@ -146,6 +165,10 @@ public class List<T> implements Iterable<T> {
     public List<T> init() {
         if (isEmpty()) throw new UnsupportedOperationException("List is empty");
         return dropRight(1);
+    }
+
+    public Pair<List<T>, List<T>> splitAt(int index) {
+        return Pair.pair(take(index), drop(index));
     }
 
     @Override

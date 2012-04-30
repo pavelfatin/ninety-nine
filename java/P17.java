@@ -35,7 +35,7 @@ class P17 {
         return f4_inner(List.<T>nil(), n, list);
     }
 
-    <T> Pair<List<T>, List<T>> f4_inner(List<T> acc, int n, List<T> list) {
+    private <T> Pair<List<T>, List<T>> f4_inner(List<T> acc, int n, List<T> list) {
         return list.isEmpty()
                 ? pair(acc.reverse(), List.<T>nil())
                 : n == 0 ? pair(acc.reverse(), list) : f4_inner(cons(list.head(), acc), n - 1, list.tail());

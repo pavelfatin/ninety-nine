@@ -14,6 +14,7 @@ def f2[T](list: List[T], acc: List[T] = Nil): List[T] = list match {
 }
 
 // Tail recursion with "reverse"
+@annotation.tailrec
 def f3[T](list: List[T], acc: List[T] = Nil): List[T] = list match {
   case Nil => acc.reverse
   case x :: xs => f3(xs, x :: x :: acc)
