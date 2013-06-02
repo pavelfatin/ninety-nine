@@ -38,7 +38,7 @@ class P23 {
 
     // Helper function
     private <T> Pair<List<T>, T> removeAt(List<T> list, int n) {
-        Pair<List<T>, List<T>> p = list.splitAt(n - 1);
+        Pair<List<T>, List<T>> p = list.splitAt(n);
         List<T> a = p.getA();
         List<T> b = p.getB();
         return pair(concat(a, b.tail()), b.head());

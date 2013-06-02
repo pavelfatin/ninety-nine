@@ -1,5 +1,6 @@
 package core;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -52,12 +53,16 @@ public class List<T> implements Iterable<T> {
     }
 
     public static <T> List<T> list(T... elements) {
+        return list(Arrays.asList(elements));
+    }
+
+    public static <T> List<T> list(Iterable<T> elements) {
         List<T> list = nil();
-        for (T each : elements) 
+        for (T each : elements)
             list = cons(each, list);
         return list.reverse();
     }
-    
+
     public static <T> List<T> singleton(T element) {
         return new List<T>(element, List.<T>nil());
     }
@@ -68,7 +73,15 @@ public class List<T> implements Iterable<T> {
             list = cons(element, list);
         return list;
     }
-    
+
+    public static List<Integer> range(int a, int b) {
+        if (a > b) {
+            return nil();
+        } else {
+            return cons(a, range(a + 1, b));
+        }
+    }
+
     public static <T> List<T> cons(T head, List<T> tail) {
         return new List<T>(head, tail);
     }

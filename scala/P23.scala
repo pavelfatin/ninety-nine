@@ -1,6 +1,6 @@
-import util.Random
-
 // P23 Extract a given number of randomly selected elements from a list.
+
+import util.Random
 
 // Building a target list while removing items from the source (recursively)
 // Time complexity is O(n^2) in worst and average cases, O(n) - in best case
@@ -15,6 +15,6 @@ def f1[T](n: Int, list: List[T]): List[T] = {
 
 // Helper function
 def removeAt[T](list: List[T], n: Int): (List[T], T) = {
-  val (a, x :: b) = list.splitAt(n - 1)
+  val (a, x :: b) = list.splitAt(n)
   (a ::: b, x)
 }
